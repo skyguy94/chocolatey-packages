@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>9.0.4350.0</version>
+    <authors>Microsoft</authors>
+    <owners>Ritch Melton</owners>
+    <projectUrl>http://www.microsoft.com/sqlserver/en/us/default.aspx</projectUrl>
+    <licenseUrl>http://www.microsoft.com/en-us/download/details.aspx?id=11988</licenseUrl>
+    <id>sql2005-nativeclient</id>
+    <title>SQL Server 2005 Native Client</title>
+    <iconUrl>https://cdn.rawgit.com/ferventcoder/chocolatey-packages/fd1a5932edc26194500554d026ca35e6c0274b6c/icons/microsoft-sql-server.png</iconUrl>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The Microsoft SQL Server Native Client contains the SQL OLE DB provider and SQL ODBC driver in one native dynamic link library (DLL) supporting applications using native-code APIs (ODBC, OLE DB and ADO) to Microsoft SQL Server.</description>
+    <tags>Microsoft SQL Server 2005 Native Client</tags>   
+  </metadata>
+</package>

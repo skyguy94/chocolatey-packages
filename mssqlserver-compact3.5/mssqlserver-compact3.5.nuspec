@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>3.5.5386.0</version>
+    <authors>Microsoft</authors>
+    <owners>Ritch Melton</owners>
+    <projectUrl>http://www.microsoft.com/sqlserver/en/us/default.aspx</projectUrl>
+    <licenseUrl>http://www.microsoft.com/en-us/download/details.aspx?id=29067</licenseUrl>
+    <id>mssqlserver-compact3.5</id>
+    <title>SQL Server Compact 3.5 with SP2</title>
+    <iconUrl>https://cdn.rawgit.com/ferventcoder/chocolatey-packages/fd1a5932edc26194500554d026ca35e6c0274b6c/icons/microsoft-sql-server.png</iconUrl>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SQL Server Compact 3.5 SP2 is an embedded database that allows developers to build robust applications for Windows desktops and mobile devices. The download contains the files for installing SQL Server Compact 3.5 SP2 and Synchronization Services for ADO.NET version 1.0 SP1 on Windows desktop.</description>
+    <tags>Microsoft SQL Server 3.5 Compact</tags>
+    <dependencies>
+      <dependency id="DotNet3.5" />
+    </dependencies>    
+  </metadata>
+</package>
