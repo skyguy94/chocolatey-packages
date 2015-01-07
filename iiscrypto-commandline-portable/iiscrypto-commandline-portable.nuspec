@@ -5,10 +5,10 @@
     <authors>Microsoft</authors>
     <owners>Ritch Melton</owners>
     <projectUrl>https://www.nartac.com/Default.aspx</projectUrl>
-    <licenseUrl>http://www.microsoft.com/en-us/download/details.aspx?id=11988</licenseUrl>
+    <licenseUrl>https://www.nartac.com/Products/IISCrypto/Default.aspx</licenseUrl>
     <id>iiscrypto-commandline-portable</id>
     <title>Nartac IIS Crypto CLI</title>
-    <iconUrl>https://www.nartac.com/Css/Images/Logo.png</iconUrl>    
+    <iconUrl>https://cdn.rawgit.com/skyguy94/chocolatey-packages/master/iiscrypto-commandline-portable/icon.png</iconUrl>    
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>IIS Crypto is a free tool that gives administrators the ability to enable or disable protocols, ciphers, hashes and key exchange algorithms on Windows Server 2003, 2008 and 2012. It also lets you reorder SSL/TLS cipher suites offered by IIS, implement best practices with a single click and test your website.</description>
     <tags>IIS SSL TLS Nartac Cryptography</tags>
