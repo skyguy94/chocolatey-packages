@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <version>1.6.7.0</version>
-    <authors>Microsoft</authors>
+    <authors>Nartac</authors>
     <owners>Ritch Melton</owners>
     <projectUrl>https://www.nartac.com/Default.aspx</projectUrl>
     <licenseUrl>https://www.nartac.com/Products/IISCrypto/Default.aspx</licenseUrl>
