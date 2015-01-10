@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>2.5.0</version>
+    <authors>Pow Tools</authors>
+    <owners>Ritch Melton</owners>
+    <projectUrl>http://www.fileshredder.org/</projectUrl>
+    <licenseUrl>http://www.fileshredder.org/</licenseUrl>
+    <id>fileshredder</id>
+    <title>File Shredder</title>
+    <iconUrl>https://cdn.rawgit.com/skyguy94/chocolatey-packages/master/fileshredder/icon.png</iconUrl>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>With File Shredder you can remove files from your hard drive without fear they could be recovered.</description>
+    <tags>File Shredder Secure Delete Erase</tags>
+  </metadata>
+</package>
