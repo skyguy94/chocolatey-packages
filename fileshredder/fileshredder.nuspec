@@ -8,7 +8,7 @@
     <licenseUrl>http://www.fileshredder.org/</licenseUrl>
     <id>fileshredder</id>
     <title>File Shredder</title>
-    <iconUrl>https://cdn.rawgit.com/skyguy94/chocolatey-packages/master/fileshredder/icon.png</iconUrl>    
+    <iconUrl>https://cdn.rawgit.com/skyguy94/chocolatey-packages/62628a215f3e6da7186bc614b573f266a6aa51e4/fileshredder/icon.png</iconUrl>    
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>With File Shredder you can remove files from your hard drive without fear they could be recovered.</description>
     <tags>File Shredder Secure Delete Erase</tags>
