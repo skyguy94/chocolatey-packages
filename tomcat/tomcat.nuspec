@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>tomcat</id>
+    <version>7.0.59</version>
+    <title>Apache Tomcat</title>
+    <authors>Apache Software Foundation</authors>
+    <owners>Richard L. Melton</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>http://tomcat.apache.org/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/030/chocolateyautomatic/master/icons/tomcat.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Tomcat is a Application Server. It is possible to run Web application ARchive (WAR) files using Tomcat. Apache Tomcat requires a JDK in order to run.
+
+### Optional installation commands:
+
+Issue `-packageparameters '"/InstallLocation=C:\Path\to\installationdirectory"'` to overwrite the default installation directory, e.g. `choco install tomcat -packageparameters '"/InstallLocation=C:\temp"'` extracts the package in `C:\temp`.
+	
+### Bugs and Features:
+
+Create an issue or comment to an existing one - https://github.com/030/chocolateyautomatic/issues</description>
+    <summary>Application Server. Windows 32 and 64 bit. Default install location: `C:\Program Files\Apache Software Foundation\tomcat\apache-tomcat-7.0.59`.</summary>
+    <releaseNotes>http://tomcat.apache.org/</releaseNotes>
+    <tags>application server apache jsf jsp jdk8</tags>
+    <dependencies>
+      <dependency id="jdk7" />
+    </dependencies>
+  </metadata>
+</package>
