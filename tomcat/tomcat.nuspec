@@ -5,7 +5,7 @@
     <version>7.0.59</version>
     <title>Apache Tomcat</title>
     <authors>Apache Software Foundation</authors>
-    <owners>Richard L. Melton</owners>
+    <owners>skyguy94</owners>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <projectUrl>http://tomcat.apache.org/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/030/chocolateyautomatic/master/icons/tomcat.png</iconUrl>
