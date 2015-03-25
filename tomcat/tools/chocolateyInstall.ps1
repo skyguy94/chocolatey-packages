@@ -23,8 +23,10 @@ if(!$PSScriptRoot){ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Par
 Set-ChocolateyPackageOptions $options
 Install-ChocolateyZipPackage @unzipParameters -UnzipLocation $options['unzipLocation']
 
-$catalinaHome = Join-Path $options['unzipLocation'] 'apache-tomcat-7.0.59\bin';
-$process = Start-Process -FilePath (Join-Path $catalinaHome 'service.bat') -ArgumentList 'install', ($options['ServiceName']) -Wait -WindowStyle Hidden -PassThru
+$catalinaHome = Join-Path $options['unzipLocation'] 'apache-tomcat-7.0.59';
+Install-ChocolateyEnvironmentVariable 'CATALINA_HOME' "$catalinaHome"
+ 
+$process = Start-Process -FilePath (Join-Path $catalinaHome 'bin\service.bat') -ArgumentList 'install', ($options['ServiceName']) -Wait -WindowStyle Hidden -PassThru
 if ($process.ExitCode -ne 0) {
   throw "Installing `"$options['serviceName']`" service failed: $LastExitCode"
 }
