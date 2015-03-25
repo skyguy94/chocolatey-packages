@@ -7,20 +7,20 @@ $checksumType = 'md5'
 $checksum64 = 'a4121b78c8eb12c7af0b7fad6fec39d6'
 $checksumType64 = 'md5'
 $global:availablePort = '8080'
-$global:serviceName = 'Tomcat7'
+$serviceName = 'Tomcat7'
 
 if(!$PSScriptRoot){ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent }
 . "$PSScriptRoot\OverwriteParameters.ps1"
 . "$PSScriptRoot\Install-Service.ps1"
 
 OverwriteParameters
-Set-Content -Path (Join-Path $PSScriptRoot "install-options.ps1") -Value "$global:serviceName"
+Set-Content -Path (Join-Path $PSScriptRoot "install-options.ps1") -Value "$serviceName"
 
 Install-ChocolateyZipPackage "$packageName" "$32BitUrl" "$global:installLocation" "$64BitUrl" -checksum "$checksum" -checksumType "$checksumType" -checksum64 "$checksum64" -checksumType64 "$checksumType64"
 
-$catalinaHome = "$global:installLocation\Apache Tomcat 7.0.59"
-$createServiceCommand = "${catalinaHome}\bin\service.bat install $global:serviceName"
+$catalinaHome = "$global:installLocation\apache-tomcat-7.0.59"
+$createServiceCommand = "${catalinaHome}\bin\service.bat install $serviceName"
 
 Install-ChocolateyEnvironmentVariable 'CATALINA_HOME' "$catalinaHome"
 
-Install-Service $packageName $global:serviceName $createServiceCommand $global:availablePort
+Install-Service $packageName $serviceName $createServiceCommand $global:availablePort

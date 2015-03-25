@@ -7,7 +7,7 @@ if(!$PSScriptRoot){ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Par
 $optionsFile = (Join-Path $PSScriptRoot "install-options.ps1")
 if (Test-Path $optionsFile)
 {
-  $global:serviceName = Get-Content $optionsFile
+  $serviceName = Get-Content $optionsFile
   Uninstall-Service "$global:serviceName"
   Remove-Item $optionsFile
 }
