@@ -32,3 +32,5 @@ if ($process.ExitCode -ne 0) {
 }
 
 Export-CliXml -Path (Join-Path $PSScriptRoot 'options.xml') -InputObject $options
+
+Get-Service |? Name -eq $options['serviceName'] | Start-Service
