@@ -8,11 +8,11 @@
     ChecksumType64 = 'md5';
 }
 
+$PFFolder = if (Get-ProcessorBits -eq 64) { "$Env:ProgramFiles" } else { "$Env:ProgramFiles(x86)" };
+$unzipLocation = Join-Path $PFFolder "Apache Software Foundation\tomcat";
 $options = @{
-    unzipLocation = if (Get-ProcessorBits -eq 64) { "$Env:ProgramFiles" } else { "$Env:ProgramFiles(x86)" };
-    availablePort = '8080';
+    unzipLocation = $unzipLocation;
     serviceName = 'Tomcat7';
-    serviceDescription = 'Apache Tomcat 7.0 Tomcat 7';  
 }
 
 Get-Service |? Name -eq $options['serviceName'] | Stop-Service
