@@ -31,7 +31,7 @@ if ($service -ne $null) {
 }
 
 $binPath = Join-Path $options['unzipLocation'] 'TeamCity\bin'
-if (Test-Path $binPath) {
+if ((Test-Path $binPath) -and ($service -ne $null)) {
 
   Push-Location $binPath
   Start-ChocolateyProcessAsAdmin '.\teamcity-server.bat service delete'
@@ -62,8 +62,9 @@ else {
     $args.Add("/domain=`"($options['domain'])`"") | Out-Null
   }
 }
-
-Start-ChocolateyProcessAsAdmin ".\teamcity-server.bat ([string]::Join(' ', $args))"
+$joined = $args -join ' '
+Write-Host ".\teamcity-server.bat $joined"
+Start-ChocolateyProcessAsAdmin ".\teamcity-server.bat $joined"
 Pop-Location
 
 $options['password'] = '';
