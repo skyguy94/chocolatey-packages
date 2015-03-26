@@ -23,7 +23,7 @@ Note: An apache-tomcat-7.0.59 folder is always created, so the actual install pa
     <releaseNotes>http://tomcat.apache.org/</releaseNotes>
     <tags>application server apache jsf jsp jdk8</tags>
     <dependencies>
-      <dependency id="jdk7" />
+      <dependency id="jdk8" />
     </dependencies>
   </metadata>
 </package>

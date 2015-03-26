@@ -2,6 +2,7 @@
   version = '9.0.3';
   unzipLocation = 'C:\';
   runAsSystem = $true;
+  serviceName = 'TeamCity';
   userName = '';
   domain = '';
   password = '';
