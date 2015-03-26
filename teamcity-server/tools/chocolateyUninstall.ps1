@@ -1,14 +1,23 @@
 ﻿$optionsFile = (Join-Path $PSScriptRoot 'options.xml')
 
-if (!(Test-Path $optionsFile))
-{
+if (!(Test-Path $optionsFile)) {
   throw "Install options file missing. Could not uninstall."
 }
 
 $options = Import-CliXml -Path $optionsFile
 
-Push-Location (Join-Path $options['unzipLocation'] 'TeamCity\bin')
-Start-ChocolateyProcessAsAdmin '.\teamcity-server.bat service delete'
-Pop-Location
+$service = Get-Service | ? Name -eq $options['serviceName']
+if ($service -ne $null) {
+  Stop-Service $service
+}
+
+$binPath = Join-Path $options['unzipLocation'] 'TeamCity\bin'
+if (Test-Path $binPath) {
+
+  Push-Location $binPath
+  Start-ChocolateyProcessAsAdmin '.\teamcity-server.bat service delete'
+  Pop-Location
+}
+
 
 Remove-Item (Join-Path $options['unzipLocation'] 'TeamCity') -Recurse -Force

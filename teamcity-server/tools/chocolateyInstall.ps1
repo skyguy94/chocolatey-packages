@@ -21,14 +21,18 @@ if(!$PSScriptRoot){ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Par
 . "$PSScriptRoot\ChocolateyHelpers.ps1"
 
 Set-ChocolateyPackageOptions $options
-if ($options['userName'] -ne '' -and $options['password'] -ne '')
-{
+if ($options['userName'] -ne '' -and $options['password'] -ne '') {
   $options['runAsSystem'] = $false;
 }
 
+$service = Get-Service | ? Name -eq $options['serviceName']
+if ($service -ne $null) {
+  Stop-Service $service
+}
+
 $binPath = Join-Path $options['unzipLocation'] 'TeamCity\bin'
-if (Test-Path $binPath)
-{
+if (Test-Path $binPath) {
+
   Push-Location $binPath
   Start-ChocolateyProcessAsAdmin '.\teamcity-server.bat service delete'
   Pop-Location
@@ -47,12 +51,10 @@ $args = New-Object System.Collections.ArrayList
 $args.Add('service') | Out-Null
 $args.Add('install') | Out-Null
 
-if ($options['runAsSystem'])
-{
+if ($options['runAsSystem']) {
   $args.Add('/runAsSystem') | Out-Null
 }
-else
-{
+else {
   $args.Add("/user=`"($options['userName'])`"") | Out-Null
   $args.Add("/password=`"($options['password'])`"") | Out-Null
   if ($options['domain'] -ne '')
