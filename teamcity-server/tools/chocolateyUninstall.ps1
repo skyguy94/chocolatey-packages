@@ -8,10 +8,7 @@ if (!(Test-Path $optionsFile))
 $options = Import-CliXml -Path $optionsFile
 
 Push-Location (Join-Path $options['unzipLocation'] 'TeamCity\bin')
-$process = Start-Process -FilePath 'teamcity-server.bat' -ArgumentList 'service', 'delete' -Wait -WindowStyle Hidden -PassThru
+Start-ChocolateyProcessAsAdmin '.\teamcity-server.bat service delete'
 Pop-Location
-if ($process.ExitCode -ne 0) {
-  throw "Uninstalling the TeamCity service failed: $LastExitCode"
-}
 
 Remove-Item (Join-Path $options['unzipLocation'] 'TeamCity') -Recurse -Force
