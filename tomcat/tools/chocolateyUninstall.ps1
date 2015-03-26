@@ -9,13 +9,13 @@ $catalinaHome = Join-Path $options['unzipLocation'] "apache-tomcat-$($options['v
 Install-ChocolateyEnvironmentVariable 'CATALINA_HOME' "$catalinaHome"
 
 $service = Get-Service | ? Name -eq $options['serviceName']
-if ($service -ne null) {
+if ($service -ne $null) {
   Stop-Service $service
 }
 
 $binPath = Join-Path $catalinaHome 'bin'
 if (Test-Path $binPath) {
-  Push-Location
+  Push-Location $binPath
   Start-ChocolateyProcessAsAdmin ".\service.bat uninstall $($options['serviceName'])"
   Pop-Location
 }
