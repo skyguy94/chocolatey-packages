@@ -14,11 +14,13 @@
 
 ### Optional installation commands:
 
-Issue `-packageparameters '"/InstallLocation=C:\Path\to\installationdirectory"'` to overwrite the default installation directory, e.g. `choco install tomcat -packageparameters '"/InstallLocation=C:\temp"'` extracts the package in `C:\temp`.
-	
-### Bugs and Features:
+`choco install teamcity-server -params "username=*user* password=*password*"` to specify a user account for the TeamCity service. This defaults to the SYSTEM account.
 
-Create an issue or comment to an existing one - https://github.com/030/chocolateyautomatic/issues</description>
+`choco install teamcity-server -params "username=*user* password=*password*"` domain=*domain*' to specify a domain user account for the TeamCity service. This defaults to the SYSTEM account.
+
+`choco install teamcity-server -params "unzipLocation=*path*"` to specify the root directory for the tomcat service. This defaults to `C:\Program Files\Apache Software Foundation\Tomcat`.
+Note: An apache-tomcat-7.0.59 folder is always created, so the actual install path is `C:\Program Files\Apache Software Foundation\Tomcat\apache-tomcat-7.0.59` for the default case or *path*\apache-tomcat-7.0.59 with a custom option.
+    </description>
     <summary>Application Server. Windows 32 and 64 bit. Default install location: `C:\Program Files\Apache Software Foundation\tomcat\apache-tomcat-7.0.59`.</summary>
     <releaseNotes>http://tomcat.apache.org/</releaseNotes>
     <tags>application server apache jsf jsp jdk8</tags>

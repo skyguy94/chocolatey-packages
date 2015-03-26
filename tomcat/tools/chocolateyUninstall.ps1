@@ -13,8 +13,11 @@ Get-Service |? Name -eq $options['serviceName'] | Stop-Service
 $catalinaHome = Join-Path $options['unzipLocation'] "apache-tomcat-$($options['version'])";
 Install-ChocolateyEnvironmentVariable 'CATALINA_HOME' "$catalinaHome"
 
-Push-Location Join-Path $catalinaHome 'bin'
+Push-Location (Join-Path $catalinaHome 'bin')
 Start-ChocolateyProcessAsAdmin ".\service.bat uninstall $($options['serviceName'])"
 Pop-Location
 
 Remove-Item (Join-Path $options['unzipLocation'] "apache-tomcat-$($options['version'])") -Recurse -Force
+if ((Get-ChildItem $options['unzipLocation'] | Measure-Object).Count -eq 0) { 
+  Remove-Item $options['unzipLocation']
+}
