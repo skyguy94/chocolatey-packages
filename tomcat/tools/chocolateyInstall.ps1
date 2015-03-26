@@ -7,18 +7,17 @@ $options = @{
 }
 
 $unzipParameters = @{
-    PackageName = 'tomcat';
-    Url = "https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.59/bin/apache-tomcat-$($options['version'])-windows-x86.zip";
-    Url64bit = "https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.59/bin/apache-tomcat-$($options['version'])-windows-x64.zip";
-    Checksum = '84fe2d5237c8569ef748700d1ac1dfba';
-    ChecksumType = 'md5';
-    Checksum64 = 'a4121b78c8eb12c7af0b7fad6fec39d6';
-    ChecksumType64 = 'md5';
+    packageName = 'tomcat';
+    url = "https://archive.apache.org/dist/tomcat/tomcat-7/v$($options['version'])/bin/apache-tomcat-$($options['version'])-windows-x86.zip";
+    url64bit = "https://archive.apache.org/dist/tomcat/tomcat-7/v$($options['version'])/bin/apache-tomcat-$($options['version'])-windows-x64.zip";
+    checksum = '84fe2d5237c8569ef748700d1ac1dfba';
+    checksumType = 'md5';
+    checksum64 = 'a4121b78c8eb12c7af0b7fad6fec39d6';
+    checksumType64 = 'md5';
 }
 
 $catalinaHome = Join-Path $options['unzipLocation'] "apache-tomcat-$($options['version'])";
 Install-ChocolateyEnvironmentVariable 'CATALINA_HOME' "$catalinaHome"
-
 $service = Get-Service | ? Name -eq $options['serviceName']
 if ($service -ne $null) {
   Stop-Service $service
@@ -36,8 +35,8 @@ if(!$PSScriptRoot){ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Par
 
 Set-ChocolateyPackageOptions $options
 Install-ChocolateyZipPackage @unzipParameters -UnzipLocation $options['unzipLocation']
- 
-Push-Location (Join-Path $catalinaHome 'bin')
+
+Push-Location $binPath
 Start-ChocolateyProcessAsAdmin ".\service.bat install $($options['serviceName'])"
 Pop-Location
 

@@ -62,8 +62,7 @@ else {
     $args.Add("/domain=`"($options['domain'])`"") | Out-Null
   }
 }
-$joined = $args -join ' '
-Write-Host ".\teamcity-server.bat $joined"
+$joined = $($args -join ' ')
 Start-ChocolateyProcessAsAdmin ".\teamcity-server.bat $joined"
 Pop-Location
 
