@@ -7,14 +7,14 @@ if (!(Test-Path $optionsFile))
 
 $options = Import-CliXml -Path $optionsFile
 
+
 Get-Service |? Name -eq $options['serviceName'] | Stop-Service
 
-$catalinaHome = Join-Path $options['unzipLocation'] 'apache-tomcat-7.0.59';
+$catalinaHome = Join-Path $options['unzipLocation'] "apache-tomcat-$($options['version'])";
 Install-ChocolateyEnvironmentVariable 'CATALINA_HOME' "$catalinaHome"
 
-$process = Start-Process -FilePath (Join-Path $catalinaHome 'bin\service.bat') -ArgumentList 'uninstall', 'Tomcat7' -Wait -WindowStyle Hidden -PassThru
-if ($process.ExitCode -ne 0) {
-  throw "Uninstalling `"$options['serviceName']`" service failed: $LastExitCode"
-}
+Push-Location Join-Path $catalinaHome 'bin'
+Start-ChocolateyProcessAsAdmin ".\service.bat uninstall $($options['serviceName'])"
+Pop-Location
 
-Remove-Item (Join-Path $options['unzipLocation'] 'apache-tomcat-7.0.59') -Recurse -Force
+Remove-Item (Join-Path $options['unzipLocation'] "apache-tomcat-$($options['version'])") -Recurse -Force
