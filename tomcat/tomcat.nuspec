@@ -14,11 +14,9 @@
 
 ### Optional installation commands:
 
-`choco install teamcity-server -params "username=*user* password=*password*"` to specify a user account for the TeamCity service. This defaults to the SYSTEM account.
+`choco install tomcat -params "servicename=*servicename*"` to specify a custom name for the Tomcat Windows service. This defaults to `Tomcat7`.
 
-`choco install teamcity-server -params "username=*user* password=*password*"` domain=*domain*' to specify a domain user account for the TeamCity service. This defaults to the SYSTEM account.
-
-`choco install teamcity-server -params "unzipLocation=*path*"` to specify the root directory for the tomcat service. This defaults to `C:\Program Files\Apache Software Foundation\Tomcat`.
+`choco install tomcat -params "unzipLocation=*path*"` to specify the root directory for the Tomcat service. This defaults to `C:\Program Files\Apache Software Foundation\Tomcat`.
 Note: An apache-tomcat-7.0.59 folder is always created, so the actual install path is `C:\Program Files\Apache Software Foundation\Tomcat\apache-tomcat-7.0.59` for the default case or *path*\apache-tomcat-7.0.59 with a custom option.
     </description>
     <summary>Application Server. Windows 32 and 64 bit. Default install location: `C:\Program Files\Apache Software Foundation\tomcat\apache-tomcat-7.0.59`.</summary>
