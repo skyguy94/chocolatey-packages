@@ -8,7 +8,7 @@
     <licenseUrl>http://ttyplus.com/multi-tabbed-putty/</licenseUrl>
     <id>mtputty</id>
     <title>MTPuTTY</title>
-    <iconUrl>https://cdn.rawgit.com/skyguy94/chocolatey-packages/62628a215f3e6da7186bc614b573f266a6aa51e4/fileshredder/icon.png</iconUrl>    
+    <iconUrl>https://cdn.rawgit.com/skyguy94/chocolatey-packages/master/mtputty/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>MTPuTTY (Multi-Tabbed PuTTY) is a small *FREE* utility enabling you to wrap unlimited number of PuTTY applications in one tabbed GUI interface. You are still continue using your favorite SSH client, but you are no longer messing around with PuTTY windows - each window will be opened in a separate tab.</description>
     <tags>MTPutty putty ssh plink pageant</tags>
