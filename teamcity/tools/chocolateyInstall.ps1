@@ -9,7 +9,7 @@
 }
 
 $packageParameters = @{
-  packageName = 'teamcity-server';
+  packageName = 'teamcity';
   url = "http://download.jetbrains.com/teamcity/TeamCity-$($options['version']).tar.gz";
   url64bit = '';
   checksum = '';
