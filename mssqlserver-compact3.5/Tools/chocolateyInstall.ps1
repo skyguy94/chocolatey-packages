@@ -13,8 +13,6 @@ $packageParameters = @{
   checksumType64 = '';
 }
 
-$packageParameters
-
 try {
   if (![System.IO.Directory]::Exists($options['tempDir'])) { [System.IO.Directory]::CreateDirectory($options['tempDir']) | Out-Null }
 
