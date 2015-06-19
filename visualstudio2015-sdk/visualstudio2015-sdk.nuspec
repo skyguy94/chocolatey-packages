@@ -7,7 +7,7 @@
     <authors>Microsoft</authors>
     <owners>skyguy94</owners>
     <projectUrl>https://www.microsoft.com/en-us/download/details.aspx?id=46850</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/skyguy94/chocolatey-packages/master/visualstudio2015-sdk/VisualStudio.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/skyguy94/chocolatey-packages/master/visualstudio2015-sdk/VisualStudio.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>The Visual Studio 2015 SDK includes project templates, tools, tests, and reference assemblies that are required to build extensions for Visual Studio 2015.</description>
     <tags>Microsoft Visual Studio 2015 SDK VS VS2015 IDE ALM</tags>

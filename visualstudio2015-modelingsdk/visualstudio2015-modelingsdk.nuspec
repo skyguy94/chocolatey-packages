@@ -7,7 +7,7 @@
         <authors>Microsoft</authors>
         <owners>skyguy94</owners>
         <projectUrl>https://www.microsoft.com/en-us/download/details.aspx?id=46850</projectUrl>
-        <iconUrl>https://raw.githubusercontent.com/skyguy94/chocolatey-packages/master/visualstudio2015-modelingsdk/VisualStudio.png</iconUrl>
+        <iconUrl>https://cdn.rawgit.com/skyguy94/chocolatey-packages/master/visualstudio2015-modelingsdk/VisualStudio.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>The Modeling SDK for Visual Studio 2015 contains Domain Specific Languages (DSL Tools) and the Architecture Tools SDK for Visual Studio 2015. The Modeling SDK provides tools and templates for building Domain Specific Language designers and extending UML. You can build your own graphical or form-based designers for Visual Studio 2015 and extend existing tools.</description>
         <tags>Microsoft Visual Studio 2015 Modeling SDK DSL UML VS VS2015 IDE ALM</tags>
