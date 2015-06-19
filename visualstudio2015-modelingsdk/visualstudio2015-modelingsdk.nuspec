@@ -12,7 +12,7 @@
         <description>The Modeling SDK for Visual Studio 2015 contains Domain Specific Languages (DSL Tools) and the Architecture Tools SDK for Visual Studio 2015. The Modeling SDK provides tools and templates for building Domain Specific Language designers and extending UML. You can build your own graphical or form-based designers for Visual Studio 2015 and extend existing tools.</description>
         <tags>Microsoft Visual Studio 2015 Modeling SDK DSL UML VS VS2015 IDE ALM</tags>
         <dependencies>
-            <dependency id="visualstudio2013-sdk" />
+            <dependency id="visualstudio2015-sdk" />
         </dependencies>
     </metadata>
 </package>
