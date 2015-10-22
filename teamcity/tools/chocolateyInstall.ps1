@@ -1,5 +1,5 @@
 ﻿$options = @{
-  version = '9.1.1';
+  version = '9.1.3';
   unzipLocation = 'C:\';
   runAsSystem = $true;
   serviceName = 'TeamCity';
