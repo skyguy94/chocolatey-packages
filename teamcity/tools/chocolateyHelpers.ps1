@@ -1,16 +1,15 @@
 function Get-ChocolateyPackageTempFolder {
-param(
-  [string] $packageName
-)
-  $chocTempDir = Join-Path $env:TEMP "chocolatey"
-  $tempDir = Join-Path $chocTempDir "$packageName"
-  if (![System.IO.Directory]::Exists($tempDir)) {[System.IO.Directory]::CreateDirectory($tempDir) | Out-Null}
+    param(
+      [string] $packageName
+    )
+    $chocTempDir = Join-Path $env:TEMP "chocolatey"
+    $tempDir = Join-Path $chocTempDir "$packageName"
+    if (![System.IO.Directory]::Exists($tempDir)) {[System.IO.Directory]::CreateDirectory($tempDir) | Out-Null}
    
-  return $tempDir;
+    return $tempDir
 }
 
 function Set-ChocolateyPackageOptions {
-    [CmdletBinding()]
     param(
         [Parameter(Mandatory=$True,Position=1)]
         [hashtable] $options
@@ -19,7 +18,7 @@ function Set-ChocolateyPackageOptions {
 
     if ($packageParameters) {
         $parameters = ConvertFrom-StringData -StringData $env:chocolateyPackageParameters.Replace(" ", "`n")
-        $parameters.GetEnumerator() | % {
+        $parameters.GetEnumerator() | ForEach-Object {
            $options[($_.Key)] = ($_.Value)
         }
     }
