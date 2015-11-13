@@ -23,7 +23,7 @@ Note: A TeamCity folder is always created, so the actual install path is `C:\Tea
 </description>
 
     <summary>This package installs the continuous integration server without a build agent. Windows 32 and 64 bit. Default install location: `C:\TeamCity.`</summary>
-    <releaseNotes>https://confluence.jetbrains.com/display/TW/TeamCity+9.1.1+Release+Notes</releaseNotes>
+    <releaseNotes>https://confluence.jetbrains.com/display/TW/TeamCity+9.1.4+%28build+37293%29+Release+Notes</releaseNotes>
     <copyright>JetBrains s.r.o.</copyright>
     <tags>>Testing Build Coding Compilation Continuous Integration CI jetbrains admin</tags>
         <dependencies>
