@@ -56,11 +56,11 @@ if ($options['runAsSystem']) {
   $args.Add('/runAsSystem') | Out-Null
 }
 else {
-  $args.Add("/user=`"($options['userName'])`"") | Out-Null
-  $args.Add("/password=`"($options['password'])`"") | Out-Null
+  $args.Add("/user=`"$($options['userName'])`"") | Out-Null
+  $args.Add("/password=`"$($options['password'])`"") | Out-Null
   if ($options['domain'] -ne '')
   {
-    $args.Add("/domain=`"($options['domain'])`"") | Out-Null
+    $args.Add("/domain=`"$($options['domain'])`"") | Out-Null
   }
 }
 $joined = $($args -join ' ')
