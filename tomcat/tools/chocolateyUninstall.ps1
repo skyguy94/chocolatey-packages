@@ -1,4 +1,6 @@
-﻿$optionsFile = (Join-Path $PSScriptRoot 'options.xml')
+﻿if(!$PSScriptRoot){ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent }
+
+$optionsFile = (Join-Path $PSScriptRoot 'options.xml')
 
 if (!(Test-Path $optionsFile)) {
   throw "Install options file missing. Could not uninstall."
