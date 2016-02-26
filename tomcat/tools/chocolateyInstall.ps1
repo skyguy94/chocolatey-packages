@@ -16,25 +16,14 @@ $unzipParameters = @{
     checksumType64 = 'md5';
 }
 
-$catalinaHome = Join-Path $options['unzipLocation'] "apache-tomcat-$($options['version'])";
-Install-ChocolateyEnvironmentVariable 'CATALINA_HOME' "$catalinaHome"
-$service = Get-Service | ? Name -eq $options['serviceName']
-if ($service -ne $null) {
-  Stop-Service $service
-}
-
-$binPath = Join-Path $catalinaHome 'bin'
-if ((Test-Path $binPath) -and ($service -ne $null)) {
-  Push-Location $binPath
-  Start-ChocolateyProcessAsAdmin ".\service.bat uninstall $($options['serviceName'])"
-  Pop-Location
-}
-
 if(!$PSScriptRoot){ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent }
 . "$PSScriptRoot\ChocolateyHelpers.ps1"
 
 Set-ChocolateyPackageOptions $options
 Install-ChocolateyZipPackage @unzipParameters -UnzipLocation $options['unzipLocation']
+
+$catalinaHome = Join-Path $options['unzipLocation'] "apache-tomcat-$($options['version'])";
+$binPath = Join-Path $catalinaHome 'bin'
 
 Push-Location $binPath
 Start-ChocolateyProcessAsAdmin ".\service.bat install $($options['serviceName'])"
