@@ -5,7 +5,8 @@ $version = '14.0.23107.156'
 
 $options = @{
     productKey = ''
-    extraFeatures = 'VS_SDK_GroupV3'
+    adminFile = (Join-Path $PSScriptRoot 'AdminFile.xml')
+    extraFeatures = 'VS_SDK_GROUPV3'
 }
 
 $packageParameters = @{
@@ -17,7 +18,6 @@ $packageParameters = @{
 
 Set-ChocolateyPackageOptions $options
 
-$adminFile = (Join-Path $PSScriptRoot 'AdminFile.xml')
 if ($options['extraFeatures']) {
   [xml]$xml = Get-Content $adminFile
   foreach ($feature in $options['extraFeatures'].Split(',')) {
@@ -33,7 +33,6 @@ if ($options['extraFeatures']) {
       $xml.DocumentElement.SelectableItemCustomizations.AppendChild($_) | Out-Null
     }
   $xml.Save($adminFile)
-  $xml
 }
 
 $packageParameters['silentArgs'] += " /Log $Env:Temp\$packageName.log /AdminFile $adminFile" 
@@ -41,4 +40,4 @@ if ($options['ProductKey']) {
     $packageParameters['silentArgs'] += (" /ProductKey" + $options['ProductKey'])
 }
 
-Install-ChocolateyPackage @packageParameters -ValidExitCodes @(0, 3010, 2147781575, -2147185721)
+Install-ChocolateyPackage @packageParameters -ValidExitCodes @(0, 3010, 2147781575, -2147185721, -2147205120, -2147172352)
