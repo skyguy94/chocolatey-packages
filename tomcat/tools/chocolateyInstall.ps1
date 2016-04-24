@@ -23,6 +23,7 @@ Set-ChocolateyPackageOptions $options
 Install-ChocolateyZipPackage @unzipParameters -UnzipLocation $options['unzipLocation']
 
 $catalinaHome = Join-Path $options['unzipLocation'] "apache-tomcat-$($options['version'])";
+Install-ChocolateyEnvironmentVariable 'CATALINA_HOME' "$catalinaHome"
 $binPath = Join-Path $catalinaHome 'bin'
 
 Push-Location $binPath
