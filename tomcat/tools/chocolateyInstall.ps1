@@ -1,7 +1,7 @@
 ﻿$PFFolder = if (Get-ProcessorBits -eq 64) { "$Env:ProgramFiles" } else { "$Env:ProgramFiles(x86)" };
 
 $options = @{
-    version = '8.0.32';
+    version = '8.0.33';
     unzipLocation = (Join-Path $PFFolder "Apache Software Foundation\tomcat");
     serviceName = 'Tomcat8';
 }
@@ -10,9 +10,9 @@ $unzipParameters = @{
     packageName = 'tomcat';
     url = "https://archive.apache.org/dist/tomcat/tomcat-8/v$($options['version'])/bin/apache-tomcat-$($options['version'])-windows-x86.zip";
     url64bit = "https://archive.apache.org/dist/tomcat/tomcat-8/v$($options['version'])/bin/apache-tomcat-$($options['version'])-windows-x64.zip";
-    checksum = '1393f5cd080f14963fbd5dcf9741b7bf';
+    checksum = '99469b119c3265a9e4149e0f771deea9';
     checksumType = 'md5';
-    checksum64 = '148d9deab641de732769f1ed6db4dff1';
+    checksum64 = '7f1c6a4d666b9c76ef3b72038c5a891e';
     checksumType64 = 'md5';
 }
 
