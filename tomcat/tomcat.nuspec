@@ -3,7 +3,7 @@
   <metadata>
     <id>tomcat</id>
     <version>7.0.69</version>
-    <title>Apache Tomcat</title>r
+    <title>Apache Tomcat</title>
     <authors>Apache Software Foundation</authors>
     <owners>skyguy94</owners>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
