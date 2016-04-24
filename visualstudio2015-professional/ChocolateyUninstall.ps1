@@ -1,9 +1,16 @@
-$installerType = 'exe'
-$silentArgs = '/Uninstall /force /Passive /NoRestart'
+$applicationName = 'Microsoft Visual Studio Professional 2015'
+$uninstallerName = 'vs_professional.exe'
 
-$key = Get-Item 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{19ddbf98-aca3-4fef-9d77-7095b105dd73}'
-if ($key)
-{
-  $values = $key.GetValue('QuietUninstallString') -split '"'
-  Uninstall-ChocolateyPackage 'visualstudio2015-professional' 'exe' $values[2] $values[1]
+$packageParameters = @{
+  packageName = 'VisualStudio2015Professional'
+  installerType = 'exe'
+  silentArgs = '/Uninstall /force /Passive /NoRestart'
+  file = ''
+}
+
+$product = Get-WmiObject -Class Win32_Product | Where-Object { $_.Name -like "$applicationName*"} | Sort-Object { $_.Name } | Select-Object -First 1
+$uninstaller = Get-ChildItem "$Env:ProgramData\Package Cache\" -Recurse -Filter $uninstallerName | Where-Object { $_.VersionInfo.ProductVersion.StartsWith($product.Version) }
+if ($product -and $uninstaller) {
+  $packageParameters['File'] = $uninstaller.FullName
+  Uninstall-ChocolateyPackage @packageParameters
 }

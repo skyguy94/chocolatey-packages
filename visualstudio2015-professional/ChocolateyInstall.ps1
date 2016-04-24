@@ -1,12 +1,10 @@
 if(!$PSScriptRoot){ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent }
 . "$PSScriptRoot\ChocolateyHelpers.ps1"
 
-$version = '14.0.23107.156'
-
 $options = @{
     productKey = ''
     adminFile = (Join-Path $PSScriptRoot 'AdminFile.xml')
-    extraFeatures = 'VS_SDK_GROUPV3'
+    extraFeatures = ''
 }
 
 $packageParameters = @{
