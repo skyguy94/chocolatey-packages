@@ -8,8 +8,8 @@ $options = @{
 
 $unzipParameters = @{
     packageName = 'tomcat';
-    url = "https://archive.apache.org/dist/tomcat/tomcat-7/v$($options['version'])/bin/apache-tomcat-$($options['version'])-windows-x86.zip";
-    url64bit = "https://archive.apache.org/dist/tomcat/tomcat-7/v$($options['version'])/bin/apache-tomcat-$($options['version'])-windows-x64.zip";
+    url = "http://archive.apache.org/dist/tomcat/tomcat-7/v$($options['version'])/bin/apache-tomcat-$($options['version'])-windows-x86.zip";
+    url64bit = "http://archive.apache.org/dist/tomcat/tomcat-7/v$($options['version'])/bin/apache-tomcat-$($options['version'])-windows-x64.zip";
     checksum = 'ce764b8bd89e4c142c460ad8e6ff8b08';
     checksumType = 'md5';
     checksum64 = '1cafbe7fe52f7da6882d1aa8e1febd4a';
