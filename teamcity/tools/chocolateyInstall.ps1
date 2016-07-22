@@ -1,5 +1,5 @@
 ﻿$options = @{
-  version = '9.1.7';
+  version = '10.0';
   unzipLocation = 'C:\';
   runAsSystem = $true;
   serviceName = 'TeamCity';
@@ -7,7 +7,6 @@
   domain = '';
   password = '';
 }
-
 $packageParameters = @{
   packageName = 'teamcity';
   url = "http://download.jetbrains.com/teamcity/TeamCity-$($options['version']).tar.gz";
