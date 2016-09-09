@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>teamcity</id>
-    <version>10.0.0</version>
+    <version>10.0.1.1</version>
     <title>TeamCity Continuous Integration Server</title>
     <authors>JetBrains</authors>
     <owners>skyguy94</owners>
@@ -28,7 +28,7 @@ Note: A TeamCity folder is always created, so the actual install path is `C:\Tea
     <copyright>JetBrains s.r.o.</copyright>
     <tags>Testing Build Coding Compilation Continuous Integration CI jetbrains admin</tags>
     <dependencies>
-        <dependency id="javaruntime" />
+        <dependency id="server-jre8" version="8.0.92"/>
     </dependencies>
   </metadata>
 </package>
