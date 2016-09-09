@@ -7,10 +7,10 @@ $packageParameters = @{
   fileFullPath = Join-Path $options['tempDir'] "SSCERuntime-ENUInstall.exe";
   url = 'http://download.microsoft.com/download/E/C/1/EC1B2340-67A0-4B87-85F0-74D987A27160/SSCERuntime-ENU.exe';
   url64bit = 'http://download.microsoft.com/download/E/C/1/EC1B2340-67A0-4B87-85F0-74D987A27160/SSCERuntime-ENU.exe';
-  checksum = '';
-  checksumType = '';
-  checksum64 = '';
-  checksumType64 = '';
+  checksum = '3FC0F90836A5080E5136262A715A826CB13DC1F2506094F65C69E63A5AD4CC4D';
+  checksumType = 'Sha256';
+  checksum64 = '3FC0F90836A5080E5136262A715A826CB13DC1F2506094F65C69E63A5AD4CC4D';
+  checksumType64 = 'Sha256';
 }
 
 try {
