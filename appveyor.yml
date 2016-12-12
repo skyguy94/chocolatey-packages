@@ -1,0 +1,28 @@
+version: 1.0.{build}
+skip_tags: true
+image: WMF 5
+nuget:
+  disable_publish_on_pr: true
+build_script:
+- ps: >-
+    # The if statement below demonstrates "skipping" the 'httpd' package which is managed by a repo owner
+
+    Get-ChildItem * -recurse -filter *.nuspec | foreach-object { $nuspec = $_ ; if (!($nuspec.fullname -match 'apache-httpd\\apache-httpd.nuspec'))
+
+    {
+
+    $nuspec.fullname
+
+    $nuspec
+
+    $Version = ([xml](Get-Content $nuspec.fullname)).package.metadata.version
+
+    $BuildCounter = $env:APPVEYOR_BUILD_NUMBER
+
+    choco pack $nuspec.fullname --version "$Version" # If testing pre-release append "-beta$BuildCounter"
+
+    }
+
+    }
+artifacts:
+- path: '**/*.nupkg'
