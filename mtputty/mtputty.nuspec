@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <version>1.6.0.176</version>
+    <version>1.6.1.176</version>
     <authors>TTY+</authors>
     <owners>Ritch Melton</owners>
     <projectUrl>http://ttyplus.com/multi-tabbed-putty/</projectUrl>
