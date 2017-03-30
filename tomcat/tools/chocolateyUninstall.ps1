@@ -10,7 +10,7 @@ $options = Import-CliXml -Path $optionsFile
 $catalinaHome = Join-Path $options['unzipLocation'] "apache-tomcat-$($options['version'])";
 Install-ChocolateyEnvironmentVariable 'CATALINA_HOME' "$catalinaHome"
 
-$service = Get-Service | ? Name -eq $options['serviceName']
+$service = Get-Service | Where-Object Name -eq $options['serviceName']
 if ($service -ne $null) {
   Stop-Service $service
 }
