@@ -1,5 +1,5 @@
 ﻿$options = @{
-  version = '10.0.5';
+  version = '2017.1';
   unzipLocation = 'C:\';
   runAsSystem = $true;
   serviceName = 'TeamCity';
@@ -11,7 +11,7 @@ $packageParameters = @{
   packageName = 'teamcity';
   url = "https://download.jetbrains.com/teamcity/TeamCity-$($options['version']).tar.gz";
   url64bit = '';
-  checksum = 'b9a58aedea64ddb399344316ee720d32f4b85dbeae17c1395561e7a87b185a0e';
+  checksum = 'ac0e6641f8ad8f4a89ceea8684f3cf9ffd2ff037917322d4f6e955b0f9432695';
   checksumType = 'Sha256';
   checksum64 = '';
   checksumType64 = '';
@@ -25,7 +25,7 @@ if ($options['userName'] -ne '' -and $options['password'] -ne '') {
   $options['runAsSystem'] = $false;
 }
 
-$service = Get-Service | ? Name -eq $options['serviceName']
+$service = Get-Service | Where-Object Name -eq $options['serviceName']
 if ($service -ne $null) {
   Stop-Service $service
 }
