@@ -1,5 +1,5 @@
 ﻿$options = @{
-  version = '2017.1.1';
+  version = '2017.1.2';
   unzipLocation = 'C:\';
   runAsSystem = $true;
   serviceName = 'TeamCity';
@@ -11,7 +11,7 @@ $packageParameters = @{
   packageName = 'teamcity';
   url = "https://download.jetbrains.com/teamcity/TeamCity-$($options['version']).tar.gz";
   url64bit = '';
-  checksum = '1bcb1551f8696071d7ad8876fcd01866efeb2c405a998e112b9d9262317ae6b7';
+  checksum = '12444f417cee122135310929414d5ff51f048eba251eb0b7eee330a5757e32d9';
   checksumType = 'Sha256';
   checksum64 = '';
   checksumType64 = '';

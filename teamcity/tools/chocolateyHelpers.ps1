@@ -2,7 +2,7 @@ function Get-ChocolateyPackageTempFolder {
     param(
       [string] $packageName
     )
-    $chocTempDir = Join-Path $env:TEMP "chocolatey"
+    $chocTempDir = Join-Path $env:TEMP 'chocolatey'
     $tempDir = Join-Path $chocTempDir "$packageName"
     if (![System.IO.Directory]::Exists($tempDir)) {[System.IO.Directory]::CreateDirectory($tempDir) | Out-Null}
    
