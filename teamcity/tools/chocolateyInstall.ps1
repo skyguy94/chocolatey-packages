@@ -1,5 +1,5 @@
 ﻿$options = @{
-  version = '2017.1.4';
+  version = $env:ChocolateyPackageVersion;
   unzipLocation = 'C:\';
   runAsSystem = $true;
   serviceName = 'TeamCity';
@@ -11,7 +11,7 @@ $packageParameters = @{
   packageName = 'teamcity';
   url = "https://download.jetbrains.com/teamcity/TeamCity-$($options['version']).tar.gz";
   url64bit = '';
-  checksum = 'd5f5acc40d31fbb445890373bd92362792d797ba96df39cb291aa308e1a88b4a';
+  checksum = '39d37de7a0a98e848e36549c9ff5c1dc4d6eba4c4509b6a80bed4958bc2a6832';
   checksumType = 'Sha256';
   checksum64 = '';
   checksumType64 = '';
