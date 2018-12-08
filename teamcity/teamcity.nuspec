@@ -2,10 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>teamcity</id>
-    <version>2018.1</version>
+    <version>2018.1.4</version>
     <title>TeamCity Continuous Integration Server</title>
     <authors>JetBrains</authors>
-    <owners>skyguy94</owners>
+    <owners>skyguy94, flcdrg</owners>
     <licenseUrl>https://www.jetbrains.com/teamcity/buy/</licenseUrl>
     <projectUrl>https://www.jetbrains.com/teamcity/</projectUrl>
     <packageSourceUrl>https://github.com/skyguy94/chocolatey-packages</packageSourceUrl>
@@ -25,7 +25,7 @@ Note: A TeamCity folder is always created, so the actual install path is `C:\Tea
     </description>
 
     <summary>This package installs the continuous integration server without a build agent. Windows 32 and 64 bit. Default install location: `C:\TeamCity.`</summary>
-    <releaseNotes>https://confluence.jetbrains.com/display/TW/TeamCity+2018.1+Release+Notes</releaseNotes>
+    <releaseNotes>https://confluence.jetbrains.com/display/TW/TeamCity+2018.1.4+%28build+58724%29+Release+Notes</releaseNotes>
     <copyright>JetBrains s.r.o.</copyright>
     <tags>Testing Build Coding Compilation Continuous Integration CI jetbrains admin</tags>
     <dependencies>
