@@ -7,14 +7,13 @@
   domain = '';
   password = '';
 }
+
+# https://download.jetbrains.com/teamcity/TeamCity-2018.1.4.tar.gz.sha256 
 $packageParameters = @{
   packageName = 'teamcity';
   url = "https://download.jetbrains.com/teamcity/TeamCity-$($options['version']).tar.gz";
-  url64bit = '';
-  checksum = 'd16ec0a4693cf4203d5e201cedf00e7a1559efaec98f54d018e67a3a17ad893d';
+  checksum = '21d680d2a4ef4d2ee6c60f4429e450a547cec1364052cd7935754b1cb32e947a';
   checksumType = 'Sha256';
-  checksum64 = '';
-  checksumType64 = '';
 }
 
 if(!$PSScriptRoot){ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent }
