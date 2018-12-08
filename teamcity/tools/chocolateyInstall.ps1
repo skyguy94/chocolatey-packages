@@ -12,7 +12,7 @@
 $packageParameters = @{
   packageName = 'teamcity';
   url = "https://download.jetbrains.com/teamcity/TeamCity-$($options['version']).tar.gz";
-  checksum = 'f6d4df1eb1800b5016e79f3fc58d6f5c926bbd65b54ccb20009a1371b6eb89ee';
+  checksum = '21d680d2a4ef4d2ee6c60f4429e450a547cec1364052cd7935754b1cb32e947a';
   checksumType = 'Sha256';
 }
 
