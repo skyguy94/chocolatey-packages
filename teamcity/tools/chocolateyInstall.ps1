@@ -1,4 +1,6 @@
-﻿$options = @{
+﻿$checksum = 'e93888cde2bdc615c9bd668d7bc2ffb6d9cc142ec00b99aa34cd4000bc6b9a04'
+
+$options = @{
   version = $env:ChocolateyPackageVersion;
   unzipLocation = 'C:\';
   runAsSystem = $true;
@@ -12,7 +14,7 @@
 $packageParameters = @{
   packageName = 'teamcity';
   url = "https://download.jetbrains.com/teamcity/TeamCity-$($options['version']).tar.gz";
-  checksum = '21d680d2a4ef4d2ee6c60f4429e450a547cec1364052cd7935754b1cb32e947a';
+  checksum = $checksum;
   checksumType = 'Sha256';
 }
 
