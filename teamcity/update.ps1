@@ -23,7 +23,7 @@ function global:au_GetLatest {
 
         $version = $_.build.version
         $buildNumber = $_.build.number
-        $releaseNotes = $_.build | Where-Object { $_.link -and $_.link.rel -eq "releaseNotes" } | Select-Object $_.build.link.href
+        $releaseNotes = $_.build.link | Where-Object { $_.rel -eq "releaseNotes" } | Select-Object -ExpandProperty href
 
         if (-not ($releaseNotes)) {
             # If there wasn't a link in the payload (which appears to be the case for older releases), then make one up following this convention:

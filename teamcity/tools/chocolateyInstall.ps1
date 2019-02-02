@@ -1,4 +1,4 @@
-﻿$checksum = 'e93888cde2bdc615c9bd668d7bc2ffb6d9cc142ec00b99aa34cd4000bc6b9a04'
+﻿$checksum = '572c645795dff18378474ee4464014bd40d880a60ad79634f6d18db28082e2d3'
 
 $options = @{
   version = $env:ChocolateyPackageVersion;
