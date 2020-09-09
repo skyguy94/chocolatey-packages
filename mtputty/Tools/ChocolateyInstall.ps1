@@ -2,7 +2,7 @@ $packageParameters = @{
   PackageName = 'mtputty'
   FileFullPath = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)\mtputty.exe"
   Url = 'http://ttyplus.com/download/mtputty.exe'
-  Checksum = 'C2A81F5DB114ABB5EC44ECA5F69FA6F93723A272B233F313EB363E411CD52069'
+  Checksum = 'B2C2FD593BDEA890202BC55C398812878D8E185C6AF45980D9DDBDCE5B4946F6'
   ChecksumType = 'Sha256'
 }
 
